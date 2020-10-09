@@ -1,5 +1,6 @@
-<div class="py-1  col-lg-4 col-md-5 col-sm-8  collapse justify-content-end position-fixed" id="cartCollapse" style="z-index: 1000; right: 0;">
-    <div class="for-top vh-70 card bg-light h-100 border shadow"
+<div class="py-1  col-lg-4 col-md-5 col-sm-8  collapse justify-content-end position-fixed" id="cartCollapse"
+    style="z-index: 1000; right: 0;">
+    <div class="for-top vh-70 card bg-light shadow"
         style="width: 99%; margin:auto 1%;z-index: 1000 !important;">
         <div class="card-top d-flex">
             <div class="col">
@@ -14,14 +15,16 @@
                 <label class="custom-control-label" for="ksh_usd">USD</label>
             </div>
 
-            <div class="font-weight-bold back-primary text-light p-1 rounded total-prc">
+            <div class="font-weight-bold back-primary text-light p-1 rounded total-prc small mr-1">
                 0.00
             </div>
         </div>
         <hr>
-        <ol class="cart px-2 cart-items" id="cart-items">
+        <ol class="cart px-2 cart-items h-100 mb-0" id="cart-items">
 
         </ol>
+        <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-primary my-2 mx-auto">
+            PROCEED TO CHECKOUT <i class="fas fa-cart-arrow-down"></i></a>
     </div>
 </div>
 <style>
