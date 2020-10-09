@@ -29,5 +29,12 @@ def cart_remove(request, product_id):
 
 
 def cart_detail(request):
-    cart=Cart(request)
-    return response.JsonResponse(cart.cart, safe = False)
+    cart=Cart(request).cart
+    for cart_item in cart:
+        item_from_db = Product.objects.filter(pk=cart_item).first()
+        if not item_from_db:
+            cart.remove(cart_item)
+        else:
+            cart[cart_item]['ksh_price'] = item_from_db.ksh_price
+            cart[cart_item]['usd_price'] = item_from_db.usd_price
+    return response.JsonResponse(cart, safe = False)
