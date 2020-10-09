@@ -1,0 +1,21 @@
+<div class="col-sm-6 col-md-4 col-lg-3 p-3 category-card">
+    <div class="card h-100" style="min-height: 100px;">
+        <img src="{{ item.images.first.image.url }}" loading="lazy" alt="image for {{item.name}}" class="card-img-top"
+    onerror="this.onerror=null;this.src='http://placehold.it/500x500';">
+        <div class="card-body py-2">
+            <h5 class="card-title m-0 p-0">{{item.name.title | truncatechars:"20"}}</h5>
+            <p class="my-0 mx-2 small subtitle p-0 text-muted">Ksh {{item.ksh_price}} | USD {{item.usd_price}}</p>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group py-0">
+                {% if item.pk|slugify in cart %}
+                <button class="btn btn-sm btn-dark add-to-cart active" data-id="{{item.pk}}">REMOVE ITEM</button>
+                {% else %}
+                <button class="btn btn-sm btn-dark add-to-cart" data-id="{{item.pk}}">ADD TO CART</button>
+                {%  endif %}
+
+                <a href="{% url 'pr-detail' item.slug %}" class="btn btn-sm btn-outline-dark  ">VIEW ITEM</a>
+            </div>
+        </div>
+    </div>
+</div>

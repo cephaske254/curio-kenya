@@ -1,0 +1,50 @@
+{% load static %}
+<div class="nav-header d-flex justify-content-center">
+    <nav class="navbar navbar-expand-lg position-fixed border-bottom shadow"
+        style="width: 99%;margin: .84034rem .84034rem 0; border-radius: 4px 4px 0 0 !important;" id="navbar">
+        <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" id="navbarToggler">
+            <i class="fas fa-bars"></i>
+        </button>
+        <span class="text-center navbar-brand m-0 py-0">CURIO KENYA</span>
+        <div class="d-lg-none d-block"></div>
+        <div class="cart-notification d-flex position-fixed" data-toggle="collapse" data-target="#cartCollapse"
+            style="right: 0; top:10px;margin: .84034rem .84034rem 2px;" onclick="$(this).toggleClass('back-primary')">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge" id="cart-count">{{cart | length }}</span>
+        </div>
+        <ul id="navbarCollapse" class="collapse navbar-nav navbar-collapse py-0" style="z-index: -1;">
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'shop' %}" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'categories' %}" class="nav-link">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'shipping' %}" class="nav-link">Shipping & Returns</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'faq' %}" class="nav-link">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-sm search_toggle">
+                    <i class="fas fa-search"></i> SEARCH</button>
+                <div class="search_form collapse">
+                    <form action="#" class="d-flex bg-white-tr p-1" style="min-width: 100%;">
+                        <input type="search" class="col form-control form-control-sm" placeholder="Search Products">
+                        <button style="width: min-content;" class="btn ml-1 btn-primary btn-sm " type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    {%  include 'cart/cart.html'%}
+</div>

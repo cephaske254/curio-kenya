@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/main/categories.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container for-top">
+    <div class="row">
+        {% for item in products %}
+        {% include 'includes/product-card-default.html' %}
+        {% empty %}
+            {{no_item_found | safe }}
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<div class="container-fluid border-top py-2">
+    <div class="row justify-content-center align-items-center">
+        <div class="d-flex">
+            <span class="small mx-1">
+                page {{products.number}} of {{products.paginator.num_pages}}
+            </span>
+        </div>
+        <div class="col d-flex justify-content-center">
+
+            {% if products.has_previous %}
+            <a class="card-link" href="?page=1">&laquo; First</a>
+            <a class="card-link" href="?page={{ products.previous_page_number }}">&lsaquo; Prev</a>
+            {% endif %}
+
+            {% if products.has_next %}
+            <a class="card-link" href="?page={{ products.next_page_number }}">Next &rsaquo;</a>
+            <a class="card-link" href="?page={{ products.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </div>
+        <div class="d-flex">
+            <span class="small mx-1">
+                Showing {{products | length}}
+            </span>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

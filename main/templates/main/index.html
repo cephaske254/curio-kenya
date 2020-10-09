@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+{% include 'includes/featured-product-template.html' %}
+<div class="container">
+    <p class="text-center mt-3 h4">TOP PRODUCTS</p>
+    <hr>
+    <div class="row">
+        {% for item in products %}
+            {% include 'includes/product-card-default.html' %}
+        {% empty %}
+            {{no_item_found | safe }}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

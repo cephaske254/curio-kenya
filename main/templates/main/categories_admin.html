@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<!-- 
+<div class="container for-top">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="card">
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid for-top">
+    <div class="row">
+        <div class="col-md-5">
+            <div id="upload-image"></div>
+        </div>
+        <div class="col-md-4">
+            <p>Select Image: <input type="file" id="image"></p>
+            <p><button class="btn btn-success crop_image">Upload Image</button></p>
+        </div>
+        <div class="col-md-4">
+            <div id="upload-image-i"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $image_crop = $('#upload-image').croppie({
+        enableExif: true,
+        viewport: {
+            width: 200,
+            height: 200,
+            type: 'square'
+        },
+        boundary: {
+            width: 300,
+            height: 300
+        }
+    });
+    $('#image').on('change', function () {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $image_crop.croppie('bind', {
+                url: e.target.result
+            }).then(function () {
+                console.log('jQuery bind complete');
+            });
+        }
+        reader.readAsDataURL(this.files[0]);
+    });
+
+
+    $('.crop_image').on('click', function (ev) {
+        $image_crop.croppie('result', {
+            type: 'canvas',
+            size: 'viewport'
+        }).then(function (resp) {
+            function name() {
+                $.ajax({
+                    type: 'POST',
+                    date: { 'image': resp },
+                    url: '/',
+                    success: function () {
+                        console.log('success')
+                    },
+                    error: function () {
+                        console.log('error')
+                    }
+                })
+            }
+            name()
+
+        });
+    });
+
+</script>
+
+<style>
+    #demo-basic {
+        display: flex;
+        height: 500px;
+        width: 100%;
+        background: black;
+    }
+</style>
+
+{% endblock %}

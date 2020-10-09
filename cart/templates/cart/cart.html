@@ -1,0 +1,38 @@
+<div class="py-1  col-lg-4 col-md-5 col-sm-8  collapse justify-content-end position-fixed" id="cartCollapse" style="z-index: 1000; right: 0;">
+    <div class="for-top vh-70 card bg-light h-100 border shadow"
+        style="width: 99%; margin:auto 1%;z-index: 1000 !important;">
+        <div class="card-top d-flex">
+            <div class="col">
+                <span class="h5">
+                    My Cart
+                </span>
+                <i class="fas fa-shopping-cart m-auto"></i>
+            </div>
+
+            <div class="custom-control custom-switch d-flex mx-2 btn btn-sm border bg-white">
+                <input type="checkbox" class="custom-control-input position-relative" id="ksh_usd">
+                <label class="custom-control-label" for="ksh_usd">USD</label>
+            </div>
+
+            <div class="font-weight-bold back-primary text-light p-1 rounded total-prc">
+                0.00
+            </div>
+        </div>
+        <hr>
+        <ol class="cart px-2 cart-items" id="cart-items">
+
+        </ol>
+    </div>
+</div>
+<style>
+    .vh-70 {
+        height: 70vh !important;
+        overflow-y: scroll !important;
+    }
+
+    .cart-item {
+        margin: 8px 1px;
+        display: grid;
+        grid-template-columns: 50px 1fr;
+    }
+</style>

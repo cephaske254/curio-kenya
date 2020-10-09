@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container for-top">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-7 border-bottom">
+            <img src="{% static 'images/logo-lg.png' %}" style="width: 75%; margin: auto;">
+        </div>
+    </div>
+    <div class="row justify-content-center py-1">
+        <div class="col-sm-12 col-md-9 col-lg-8">
+            <p class="h4">SHIPPING</p>
+            <hr>
+            <p class="text">
+                Our shop is based in Nairobi, Kenya and this means that your orders might take up to 7-14 days before it
+                reaches
+                you, but we will do our best to make sure it gets there earlier for orders outside Kenya.
+            </p>
+            <p class="text">
+                Orders will be shipped in 1-3 business days to speed up the process so that you get your beautiful
+                items.
+            </p>
+            <p class="text">
+                Express shipping will be done with DHL Express. DHL does not accept P.O.BOX or Postal addresses.
+            </p>
+
+            <h5 class="underline">KENYA</h5>
+            <ul class="text">
+                <li class="font-weight-bold">
+                    Free deliveries in Nairobi C.B.D (Central Business District).
+                    Deliveries in Nairobi but outside C.B.D are done using safe bikes such as (Safe Boda) or Uber at the
+                    customers expenses.
+                </li>
+                <li>
+                    Nationwide Deliveries are done using Buses (such as Easy Coach or Modern Coast), we can also use
+                    G4S, Postal service… depending on the customers preference, at their own cost.
+                </li>
+                <li>
+                    Free shipping for orders above Ksh. 10,000
+                </li>
+            </ul>
+
+            <h5 class="underline">INTERNATIONAL</h5>
+            <ul class="text">
+                <li>
+                    We use DHL for all shipping as it is safer and faster
+                </li>
+                <li class="font-weight-bold">
+                    Free shipping for orders above USD 200 .
+                </li>
+                <li>
+                    Tracking numbers are provided immediately we ship your goods so that you can easily track your your
+                    order.
+                </li>
+
+                In case of returns feel free to Contact Us if you need any clarification.
+
+            </ul>
+
+            <br>
+            <p class="h4">RETURNS</p>
+            <hr>
+            <p class="text">
+                We gladly accept returns under certain circumstances. Kindly read below.
+            </p>
+            <p class="text">
+                The below items can’t be returned or exchanged due to their nature, unless they arrive damaged or
+                defective:
+            </p>
+            <ul class="text font-weight-bold">
+                <li>
+                    Custom or personalized orders
+                </li>
+                <li>
+                    Items on sale
+                </li>
+            </ul>
+            <p class="text">
+                Kindly Contact us within: <span class="font-weight-bold"> 3 days of delivery</span>
+            </p>
+            <p class="font-weight-bold">
+                We DON’T ACCEPT Exchanges or Cancellations
+            </p>
+
+            <p class="font-weight-bold">
+                N/B: Plastic bags are not allowed in Kenya, we therefore urge our dear customers to wrap the items in
+                non- plastic packages in case there is need for return. WE don’t mind if you wrap in old newspapers,
+                it’s all fine with us 🙂
+            </p>
+
+            <p class="text">
+                It is important to note that <span class="font-weight-bold"> Buyers are responsible for return shipping
+                    costs</span>. If the item is not returned in its original condition, the buyer is responsible for
+                any loss in value.
+            </p>
+
+            <p class="text">
+                Thank you and happy shopping 🙂
+            </p>
+
+        </div>
+        <div class="border-left nav col-sm-12 col-md-3 col-lg-4 d-none d-md-block px-3 ">
+            <p class="h4 col-12">QUICK LINKS</p> <hr>
+            {% include 'includes/quick-links.html' %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container for-top">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-9 col-lg-8 border-bottom">
+            <img src="{% static 'images/logo-lg.png' %}" style="width: 75%; margin: auto;">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-9 col-lg-8">
+            <p class="h4">FREQUENTLY ASKED QUESTIONS</p>
+            <hr>
+
+            <h5 class="underline">HOW DO I SIGN INTO MY ACCOUNT?</h5>
+            <P class="text">
+                Click on the “Account” option on the menu and enter you sign in details that you used to create an
+                account with us, then you will be signed into your account.
+            </P>
+
+            <h5 class="underline">HOW CAN I CANCEL MY ORDER? </h5>
+            <p class="text">
+                Go to your order menu and you will see the option for canceling orders.
+            </p>
+
+            <h5 class="underline">CAN YOU SHIP INTERNATIONAL? </h5>
+            <p class="text">
+                YES we can! We use DHL Express as a mode of shipping. for it is faster and safer. We are however
+                flexible to use a service that you prefer, if it is possible we will do it for you.
+            </p>
+
+            <h5 class="underline">TRACK YOUR ORDER. </h5>
+            <p class="text">
+                After you have made your order, you will immediately get a confirmation message from us. From your
+                portal, you will be able to see the stage which your order is at. For international orders, we will also
+                provide tracking number for you to see where the order is.
+            </p>
+
+            <h5 class="underline">MODE OF PAYMENT? </h5>
+            <p class="text">
+                Cash on delivery-ONLY applicable within Nairobi, for pick-ups and deliveries.
+            </p>
+            <p class="text">
+                Mpesa money transfer- We encourage the use of M-pesa as it also acts as a receipt.
+            </p>
+            <p class="text">
+                Credit card-Applicable for all shoppers and especially those out of Kenya.
+                PayPal- This is a PREFERRED mode of payment especially for our international shoppers.
+            </p>
+
+            <h5 class="underline">WHERE CAN I FIND MORE HELP TOPICS? </h5>
+            <p class="text">
+                If you haven’t found help kindly send us a direct message and we will reply to you within hours.
+            </p>
+
+            <h5 class="underline">HOW DO I SEE MORE PRODUCT DETAILS? </h5>
+            <p class="text">
+                Click on the desired product then scroll down and you will be able to see more details of the products
+                in the description section.
+            </p>
+
+            <h5 class="underline">DO YOU SELL YOUR PRODUCTS IN WHOLESALE FOR RESELL? </h5>
+            <p class="text">
+                Yes we do. We accept wholesale orders which will be processed after a given period . Kindly contact us
+                on your preferred order.
+            </p>
+
+            <h5 class="underline">PERSONAL INFORMATION SECURITY </h5>
+            <p class="text">
+                Your personal information will not be shared to third party for personal gains or use. Keep your account
+                secure and ensure your login details are kept safe and don’t share with other people.
+            </p>
+
+            <h5 class="underline">I HAVE RECEIVED A FAULTY ITEM. </h5>
+            <p class="text">
+                After receiving your order and in an unfortunate situation it is broken, kindly take a photo and send it
+                to us then we can know how to settle the matter.Kindly read our shipping and returns policy
+                https://www.curiokenya.com/shipping/
+            </p>
+
+            <h5 class="underline">CAN I RETURN A GIFT VOUCHER? </h5>
+            <p class="text">
+                Unfortunately you cannot return a gift voucher.
+            </p>
+
+            <h5 class="underline">HOW CAN I KNOW THE PRICE IN KENYA SHILLINGS?</h5>
+            <p class="text">
+                The prices show up in US Dollars, the conversion rate is Ksh. 100. That is USD 1 = Ksh 100. Therefore is
+                a products is USD 5.00 * 100 = Ksh500
+            </p>
+
+            <h5 class="text-muted text-center">
+                CANNOT FIND AN ANSWER? <a href="{% url 'contact' %}" class="card-link text-dark">CONTACT US</a>
+            </h5>
+
+        </div>
+        <div class="border-left nav col-sm-12 col-md-3 col-lg-4 d-none d-md-block px-3 ">
+            <p class="h4 col-12">ASK US VIA</p>
+            <hr>
+
+            <div class="d-flex social-icons contact flex-column justify-content-center">
+                {% for detail in social_links %}
+                {%  if detail.social and detail.handle != 'CurioKenya' %}
+                <a href="{{detail.link}}" target="_blank" class="social-icon text-dark d-flex align-items-center">
+                    <i class="{{detail.classes}}"></i> &nbsp;&nbsp;
+                    <span class="text" style="font-size: 9 !important;">
+                        {{detail.handle}}
+                    </span>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

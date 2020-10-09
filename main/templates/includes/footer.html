@@ -1,0 +1,18 @@
+<div class="footer">
+    <div class="d-flex align-items-center flex-column">
+        <div class="d-flex social-icons">
+            {% for detail in social_links %}
+            {%  if detail.social %}
+            <a href="{{detail.link}}" target="_blank" class="social-icon">
+                <i class="{{detail.classes}}"></i>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <p class="m-1 p-0">Curio Kenya &copy; 2020</p>
+
+        <p class="m-1 p-0 small">Designed & Maintained by <a target="_blank" href="https://uxinfiniti.com"
+                class="text-white underline"> UXinfiniti</a></p>
+    </div>
+</div>

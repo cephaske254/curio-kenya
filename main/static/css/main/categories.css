@@ -1,0 +1,22 @@
+.category-card{
+    transition: .3s;
+}
+.category-card:hover{
+    margin-top: -1%;
+    margin-bottom: 1%;
+    transition: .2s;
+
+}
+.category-label{
+    background: rgba(0, 0, 0, 0.5);
+    top: 0; left: 0;
+    width: 100%;
+    transition: ease-out .2s;
+    display: flex;
+    color: white !important;
+}
+.category-label:hover{
+    background: rgba(0, 0, 0, 0.212);
+    transition: ease-in .2s;
+    
+}

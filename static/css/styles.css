@@ -1,0 +1,97 @@
+:root{
+    --primary: #ee005b;
+    --text-white-tr: rgb(255, 255, 255, .90);
+}
+*{
+    border-radius: 2px !important;
+}
+.container, .container-fluid {border-radius: 0% !important;}
+a,a:focus, a:hover{text-decoration: none; border: none !important;}
+body .for-top{ min-height: 80vh; padding-top: 12px !important;}
+.back-primary {background: var(--primary) !important;}
+button:focus, a:focus, input:focus, textarea:focus{
+    box-shadow: none !important;
+    border-style: solid;
+}
+input:focus, textarea:focus{
+    border: 1px solid rgba(0, 0, 0, 0.411) !important;
+    transition: ease-in-out .4s;
+}
+@font-face{
+    font-family: 'Poiret One';
+    src: url('../fonts/PoiretOne-Regular.ttf');
+}
+@font-face{
+    font-family: 'Graphik';
+    src: url('../fonts/GraphikRegular.otf');
+}
+@font-face{
+    font-family: 'GraphikBold';
+    src: url('../fonts/GraphikSemibold.otf');
+}
+@font-face{
+    font-family: 'CrimsonText-Regular';
+    src: url('../fonts/CrimsonText-Regular.ttf');
+}
+@font-face{
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Regular.ttf');
+}
+.container,.container-fluid{border-radius: 0;}
+body{
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+/* .btn-sm{font-size-adjust: 0.40;;} */
+.bg-dark-light {background: #f4f5f6 !important;}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5{font-family: 'CrimsonText-Regular' !important;}
+.display-1,.display-2,.display-3,.display-4,.display-5{ font-family: 'Source Sans Pro' !important;}
+.shadow {box-shadow: 0 .7rem 1rem rgba(0,0,0,.27) !important;}
+.navbar-toggler{border: none !important; color: var(--primary) !important;}
+.underline{text-decoration: underline !important;}
+.navbar .ul
+.input{width: 100%;}
+.vh-50{height: 50vh;}
+.bg-white-tr{
+    background: var(--text-white-tr);
+}
+.navbar{z-index: 1000000;transition: .4s; background: rgba(255, 255, 255, 0.73);}
+.nav-header .navbar:hover,.nav-header .navbar:focus{background: var(--text-white-tr);}
+.nav-item{margin:auto 2px;}
+.border-primary, .border-primary:focus {border-color: var(--primary) !important;}
+.search_toggle,.btn-primary{background: var(--primary) !important; border-color: var(--primary) !important;}
+.search_toggle{color: var(--text-white-tr);}
+.search_toggle,.search_form{font-family: 'Source Sans Pro' !important;}
+.navbar a,.navbar a:focus, .navbar, .top-bar input{
+    color: var(--primary) !important;
+    border-width: 0;
+    border-bottom:2px solid transparent;
+    font-family: 'CrimsonText-Regular';
+}
+.navbar a:hover{border-bottom:2px solid var(--primary);}
+.navbar .navbar-brand{font-family: 'Source Sans Pro';}
+.navbar a {text-transform: uppercase; font-size-adjust: .1;}
+.cart-notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+.cart-notification:hover {
+    background: var(--primary);
+}
+
+.footer {
+    background: black;
+    padding: 1.8em;
+    color: white;
+}
+
+.social-icons i {font-size: 30px;}
+.social-icons a{border: none !important;}
+.social-icon {color: white !important;margin: 4px !important;}
+.social-icons.contact i{ font-size: 30px ; color: #000000;}
+.social-icons.contact a{ color: #000000 !important;border: none !important;}
+.social-icons a{text-decoration: none !important;}
